@@ -199,7 +199,7 @@ altitude, in `SP101_Course_Outline.html`.
 |---|---|---|---|
 | Public dossier | `sle-dossier.html`, `index.html` | Institutional value, real product status, 5 units/5 narratives, components, implementation, CTA | Audits, exact ceilings, production instructions, detailed P/M/R, internal links |
 | Public course pages | `sle-sp101.html`, `sle-sp102.html`, `sle-sp201.html` | Exit profile, units, route summary, components, pilot status | AC/CB, DOP, per-lesson microdecisions, "receptive-only controls" jargon |
-| Public competence map | `sle-linguistic-competence-map.html` | 6 skill areas, cross-course progression, 5-unit SP101 summary, SLE outcomes | Full lesson-by-lesson tables, exact ceilings, P/M/R detail, CT2 audit link |
+| Competence map | `sle-linguistic-competence-map.html` | 6 skill areas, full 24-lesson SP101 tables, Cuéntame language tables, SLE outcomes, SP102/SP201 alignment tables (marked proposed), progression, strategies | CT2 audit link, "exact productive ceiling"/P-M-R jargon labels, invented characters (Doña Rosa, Don Felipe, Tomás), essentialist culture framing |
 | Instructor scope & sequence | `SP101_Course_Outline.html` | Lesson, function, structures, vocabulary, evidence, cultural anchor, per-lesson | Production comments ("prepares CT"), internal audit links, revision history |
 | Internal production authority | `internal/00_FINAL_PRODUCTION_AUTHORITY.md`, `internal/SP101_CT2_AUDITORIA_LINGUISTICA_Y_CULTURAL.md` | Full inventory, P/M/R, per-CT limits, sources, QA gates, Marcos notes | — (never published directly) |
 
@@ -267,6 +267,73 @@ location and was left in place because it links to a genuine working demo,
 not a static mockup — but the backdrop styling should be reviewed against
 the CDMX/Expo Café setting before the next production pass.
 
+## 8b. Revision 2 — Angélica's direct feedback on the deployed site (August 11, 2026)
+
+After the first pass deployed, Angélica reviewed the live GitHub Pages site
+directly and gave three corrections. This revision addressed all three:
+
+1. **"¿y el Competence Map?!!! desapareció!! Lo necesito de regreso. Solo
+   que bien auditado."** The first pass had reduced
+   `sle-linguistic-competence-map.html` from a full lesson-by-lesson
+   resource to a condensed public summary, on the assumption (from the
+   handoff's audience-separation table) that detailed content should live
+   only in the instructor scope & sequence. That assumption was wrong —
+   Angélica wants the full map back as a single comprehensive resource.
+   **Fixed:** restored the complete page from the pre-audit version
+   (all five SP101 unit tables with all 24 lessons, the Cuéntame
+   language/cultural-pages/receptive-scope table, both SLE-authored
+   outcomes tables, the full SP102 and SP201 alignment tables and Can-Do
+   lists, the full Progression table, and the full Strategies table) —
+   but audited this time: CT2 audit link removed, "Exact productive
+   ceiling" → "Language available at this capstone," "Receptive-only
+   controls" → "What stays supported, not required," "P: functional core"
+   column → "Key vocabulary," SP201 renamed to Intermediate Spanish I, and
+   every invented-character/essentialist line replaced (see below).
+2. **Screenshot showed the P/M/R vocabulary-tier block and the
+   eBook→Compendio→Composición→Reto→Cuéntame "Product route" paragraph on
+   `SP101_Course_Outline.html`, flagged as not client/instructor facing.**
+   **Fixed:** removed that block from the Course Outline's overview
+   section entirely (it was also present, near-verbatim, on the
+   competence map — removed from there too). This production-vocabulary
+   methodology now lives only in this document (§6).
+3. **"El UX es un poco confuso... deberían de ir juntas o tener un ciclo
+   de regreso sin tener que presionar Dossier todo el tiempo."**
+   **Fixed:** `sle-sp101.html`, `sle-sp102.html`, `sle-sp201.html`,
+   `SP101_Course_Outline.html`, and `sle-linguistic-competence-map.html`
+   now cross-link directly to each other (Course Outline ↔ Competence Map
+   ↔ course pages) instead of requiring a trip back through
+   `sle-dossier.html` every time.
+
+Invented-character and essentialism cleanup applied to the restored
+SP102/SP201 tables on the competence map (same standard as §3's "open cast
+question"): removed "Don Marcos selling at the feria," "Doña Rosa
+organizing the/giving instructions for the quinceañera" (×2), "Don Felipe
+narrating his journey to the feria," "Tomás at the farmacia," and "The
+feria's vendors and visitors" — none of these are canonical per §3/§8's
+cast rules, and SP102/SP201 have no approved narrative yet. Replaced with
+neutral scenario labels ("narrative to be finalized") that preserve the
+grammar/vocabulary planning content without asserting invented scenes.
+Also softened "bargaining culture in Mexican markets," "Mexican
+indirectness," and two absolutist "in Mexican culture/communities" phrases
+to situated, non-essentializing wording, consistent with §3.
+
+L21's competence-map row still said "Voy a la feria" (the legacy title) —
+this was a duplicate of the same bug already fixed in
+`SP101_Course_Outline.html` in the first pass; fixed here too, to
+"¿Adónde vas?".
+
+**Table-overflow note:** the original handoff (§7 file corrections) called
+for replacing the SP102/SP201 seven-column tables with cards/accordions
+because screenshots showed horizontal overflow and cut-off text. This
+revision kept the original table format (per Angélica's "bring it back"
+instruction) but verified with Playwright at 320/768/1024/1440px that the
+existing `.table-wrap { overflow-x: auto }` container fully contains the
+wide tables — zero page-level horizontal overflow at any breakpoint, full
+content reachable via a contained horizontal scroll rather than card
+reflow. If dense horizontal scrolling on mobile is still judged too hard
+to use in practice, converting to cards remains the fallback documented in
+the original handoff.
+
 ## 9. Explicitly out of scope for this pass
 
 The handoff's workflow (§9) also calls for generating the full set of
@@ -300,13 +367,18 @@ should be scoped and confirmed with Angélica separately before starting.
       page (CT2 audit link removed).
 - [ ] Names/photos/roles/alt text consistent — **Avatar (2)/(3) mismatch
       fixed; Doña Rosa's canonical role is still an open question (see §3).**
-- [ ] Navigation/tables readable at 320/768/1024/1440px — **pending visual
-      QA (see task tracking); the 1080px-min-width tables were removed from
-      the public competence map, which was the main known offender.**
-- [ ] Internal links free of 404s; external samples current — **pending
-      QA; the Oaxaca reading sample was retired rather than fixed. External
-      CEPE/Expo Café/gob.mx/INAH/CONANP reference links were not
-      independently re-verified for liveness in this pass.**
+- [x] Navigation/tables readable at 320/768/1024/1440px — verified with
+      Playwright (zero page-level horizontal overflow) on all 6 pages after
+      both revision passes, including the restored full-width competence-map
+      tables (contained scroll via `.table-wrap`, not page overflow).
+      Cross-page navigation added so `sle-sp101.html`,
+      `SP101_Course_Outline.html`, and `sle-linguistic-competence-map.html`
+      link to each other directly (Revision 2, §8b).
+- [ ] Internal links free of 404s; external samples current — **local links
+      verified with no 404s. External CEPE/Expo Café/gob.mx/INAH/CONANP
+      reference links could not be checked — this sandbox's network egress
+      is blocked for those domains (confirmed via WebFetch error
+      EGRESS_BLOCKED). Verify manually before publishing.**
 - [x] Implementation text (SCORM/LTI/FERPA/narration) now identical in
       wording across the dossier, SP101, SP102, and SP201.
 - [ ] GitHub Pages verified with a no-cache URL after deploy — **not
