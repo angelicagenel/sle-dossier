@@ -243,6 +243,29 @@ altitude, in `SP101_Course_Outline.html`.
   pronouns (including DOP) start there, not in SP101.
 - Moved `SP101_CT2_AUDITORIA_LINGUISTICA_Y_CULTURAL.md` into `internal/`
   and removed its only public link.
+- **Removed the "Lesson Previews" / "Sample Lesson Screens" screenshot
+  galleries from `sle-sp101.html`, `sle-sp102.html`, and `sle-sp201.html`.**
+  These were actual PNG screenshots of the retired prototype (not text, so
+  the grep sweep missed them on the first pass) — nearly every image
+  (`L01 eBook.png`, `L01 eBook 1-6.png`, `L02 2.png`, `L03.png`) shows
+  "La feria de Oaxaca," don Marcos running a market/coffee stall, or an
+  uncanonical character ("señora López"). Only `L02.png` (a generic
+  hay/no hay sorting exercise) was clean. No accurate replacement assets
+  exist yet, so the galleries were retired rather than patched — same
+  treatment as the dossier's Oaxaca reading-sample card. **New,
+  narrative-accurate screenshots (CDMX/Expo Café framing, canonical cast
+  only) are needed before any lesson-preview gallery goes back on these
+  pages.**
+
+### Minor open item — video sample background
+
+`images/video-scene-sample.png` (still live on `sle-dossier.html`'s Samples
+section, linked to a real interactive demo) uses the same blurred
+market-style backdrop as the retired Oaxaca images and is captioned "Don
+Marcos and doña Rosa are talking about new people." It does not name a
+location and was left in place because it links to a genuine working demo,
+not a static mockup — but the backdrop styling should be reviewed against
+the CDMX/Expo Café setting before the next production pass.
 
 ## 9. Explicitly out of scope for this pass
 

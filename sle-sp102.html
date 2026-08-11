@@ -109,12 +109,6 @@ body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--s
 .unit-card-cando { list-style: none; padding: 0; margin-top: auto; }
 .unit-card-cando li { font-family: 'Poppins', sans-serif; font-size: 12px; color: var(--secondary); padding: 4px 0 4px 10px; border-left: 2px solid var(--eucalyptus-light); margin-bottom: 4px; line-height: 1.4; }
 
-/* EBOOK GALLERY */
-.ebook-gallery-band { background: var(--white); padding: 24px 48px; border-top: 1px solid var(--border); }
-.ebook-gallery-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 14px; display: block; }
-.ebook-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.ebook-item img { width: 100%; height: 280px; object-fit: contain; background: var(--surface); border-radius: 6px; border: 1px solid var(--border); display: block; }
-
 /* CONTACT */
 .contact-band { background: var(--surface); padding: 24px 48px; border-top: 1px solid var(--border); }
 .contact-band p { font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--secondary); line-height: 1.65; }
@@ -134,20 +128,18 @@ body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--s
   .content-grid { grid-template-columns: 1fr; }
   .unit-grid { grid-template-columns: repeat(2, 1fr); }
   .delivery-grid { grid-template-columns: repeat(2, 1fr); }
-  .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .nav-course-links { display: none; }
   .site-nav, .course-header, .positioning-line, .quote-band, .prereq-band,
   .ztc-row, .content-grid, .delivery-band,
-  .sequence-section, .ebook-gallery-band,
+  .sequence-section,
   .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
   .site-footer { flex-direction: column; align-items: flex-start; }
   .footer-right { text-align: left; }
   .course-header-inner { flex-wrap: wrap; }
   .unit-grid { grid-template-columns: 1fr; }
   .delivery-grid { grid-template-columns: 1fr; }
-  .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -354,16 +346,6 @@ body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--s
   </section>
 
 </main>
-
-<div class="ebook-gallery-band">
-  <span class="ebook-gallery-label">Sample Lesson Screens</span>
-  <div class="ebook-gallery">
-    <div class="ebook-item"><img src="images/L02.png" alt="SP102 Lesson 2 — eBook screenshot" loading="lazy"></div>
-    <div class="ebook-item"><img src="images/L02%202.png" alt="SP102 Lesson 2 — eBook screenshot, page 2" loading="lazy"></div>
-    <div class="ebook-item"><img src="images/L01%20eBook%205.png" alt="SP102 lesson preview — eBook screenshot" loading="lazy"></div>
-    <div class="ebook-item"><img src="images/L01%20eBook%206.png" alt="SP102 lesson preview — eBook screenshot" loading="lazy"></div>
-  </div>
-</div>
 
 <div class="contact-band">
   <p>Founding partner pricing, implementation support, and pilot availability.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
